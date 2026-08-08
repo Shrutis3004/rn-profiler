@@ -1,0 +1,80 @@
+{
+  "name": "rn-profiler",
+  "version": "0.1.0",
+  "description": "Find what is bloating your React Native bundle and which components re-render for no reason.",
+  "keywords": [
+    "react-native",
+    "metro",
+    "bundle",
+    "bundle-size",
+    "source-map",
+    "profiler",
+    "performance",
+    "re-render"
+  ],
+  "license": "MIT",
+  "author": "Shruti Singh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shrutis3004/rn-profiler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shrutis3004/rn-profiler/issues"
+  },
+  "homepage": "https://github.com/Shrutis3004/rn-profiler#readme",
+  "type": "module",
+  "bin": {
+    "rn-profiler": "./dist/index.js"
+  },
+  "exports": {
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "import": "./dist/runtime.js",
+      "require": "./dist/runtime.cjs"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "test": "node --test test/*.test.js",
+    "prepublishOnly": "npm run typecheck && npm run build && npm test"
+  },
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1",
+    "source-map": "^0.7.4",
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.31",
+    "@types/react-test-renderer": "^18.3.1",
+    "@types/ws": "^8.18.1",
+    "react": "^18.3.1",
+    "react-test-renderer": "^18.3.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

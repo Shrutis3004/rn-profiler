@@ -1,0 +1,11 @@
+node_modules/
+dist/
+
+# Personal interview prep — never commit these
+INTERVIEW-*.md
+*.log
+.DS_Store
+.env
+.env.*
+fixtures/*.js
+fixtures/*.map
